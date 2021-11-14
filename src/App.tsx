@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from './components/Layout';
-import ControlPanel from './components/Home/ControlPanel'
+import Homepage from './components/Home/Homepage'
+import InvoiceView from './components/Invoice/InvoiceView';
+import AddForm from './components/Form/AddForm';
 
 
 function App() {
@@ -10,9 +12,9 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<ControlPanel />}/>
-          <Route path="/invoice/:id" element={<div />}/>
-          <Route path="/" element={<div />}/>
+          <Route path="/" element={<Homepage />}/>
+          <Route path="/invoice/:id" element={<InvoiceView />}/>
+          <Route path="/addform" element={<AddForm />}/>
         </Routes>
       </Layout>
     </Router>

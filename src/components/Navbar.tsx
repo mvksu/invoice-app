@@ -6,7 +6,7 @@ import { FaMoon } from "react-icons/fa";
 
 const Navbar: FC = () => {
   return (
-    <nav className="bg-dark-300 h-24 w-full md:h-full md:w-24 rounded-none md:rounded-t-3xl flex flex=rpw md:flex-col justify-between">
+    <nav className="bg-dark-300 h-24 w-full md:w-24 md:min-h-screen md:sticky md:top-0 rounded-none md:rounded-t-3xl flex md:flex-col justify-between">
       <Link
         to="/"
         className="bg-blue-500 w-24 h-24 rounded-r-3xl flex items-center justify-center relative group overflow-hidden"

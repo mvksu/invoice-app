@@ -40,7 +40,7 @@ module.exports = {
     extend: {
       height: ["responsive", "hover", "focus", "group-hover"],
       width: ["responsive", "hover", "focus", "group-hover"],
-      boxShadow: ["responsive", "hover", "focus", "group-hover"]
+      ringWidth: ["responsive", "hover", "focus", "group-hover"]
     },
   },
   plugins: [],

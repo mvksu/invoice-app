@@ -20,11 +20,11 @@ const InvoiceFilter = () => {
         )}
       </button>
       {showFilter && (
-        <div className="bg-dark-300 absolute right-0 mt-5 p-5 rounded-lg w-44">
+        <div className="bg-dark-300 absolute right-0 mt-5 p-5 rounded-lg w-44 z-50">
           <button className="w-full flex flex-row items-center group">
             <span
               className={`flex justify-center items-center w-4 h-4 mr-4 ring-blue-500 group-hover:ring-1 transition-all duration-300 rounded-sm ${
-                true ? "bg-blue-500" : " bg-blue-100 dark:bg-dark-400"
+                true ? "bg-blue-500" : " bg-dark-400 dark:bg-dark-400"
               }`}
             >
               {true && (
@@ -38,7 +38,7 @@ const InvoiceFilter = () => {
           <button className="w-full flex flex-row items-center group">
             <span
               className={`flex justify-center items-center w-4 h-4 mr-4 ring-blue-500 group-hover:ring-1 transition-all duration-300 rounded-sm ${
-                false ? "bg-blue-500" : " bg-blue-100 dark:bg-dark-400"
+                false ? "bg-blue-500" : " bg-dark-400 dark:bg-dark-400"
               }`}
             >
               {false && (
