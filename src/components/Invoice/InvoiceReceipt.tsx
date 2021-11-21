@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const InvoiceReceipt: FC = () => {
+const InvoiceReceipt: FC<any> = ({items}) => {
   return (
     <div className="bg-dark-300 filter brightness-125 rounded-xl">
       <div className="flex justify-between items-center py-4 px-6 md:hidden">
@@ -17,16 +17,25 @@ const InvoiceReceipt: FC = () => {
           <p className="text-gray">Price</p>
           <p className="text-gray">Total</p>
         </div>
-        <div className="grid grid-cols-5 filter brightness-125 w-full text-right text-sm ">
-          <p className="text-white col-start-1 col-end-3 text-left">Item1</p>
-          <p className="text-white">2</p>
-          <p className="text-white">12</p>
-          <p className="text-white">25</p>
-        </div>
+        {items.map((item: any) => (
+          <div className="grid grid-cols-5 filter brightness-125 w-full text-right text-sm">
+            <p className="text-white col-start-1 col-end-3 text-left">
+              {item.name}
+            </p>
+            <p className="text-white">{item.price}</p>
+            <p className="text-white">{item.qty}</p>
+            <p className="text-white">{item.price * item.qty}</p>
+          </div>
+        ))}
       </div>
       <div className="bg-dark-900 w-full h-16 rounded-b-xl flex justify-between items-center ">
         <h1 className="px-4">Grand total</h1>
-        <h1 className="text-2xl px-4">$222.00</h1>
+        <h1 className="text-2xl px-4">
+          $
+          {items
+            .map((item: any) => item.price * item.qty)
+            .reduce((sum: number, item: number) => sum + item, 0)}
+        </h1>
       </div>
     </div>
   );

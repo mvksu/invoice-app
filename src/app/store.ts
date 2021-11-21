@@ -1,9 +1,12 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import invoiceReducer from "../features/invoice/invoiceReducer";
+import filterReducer from "../features/filterReducer/filterReducer";
+
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    invoices: invoiceReducer,
+    filterMethod: filterReducer
   },
 });
 
