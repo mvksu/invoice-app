@@ -12,7 +12,7 @@ const Homepage: FC<any> = ({form}) => {
       filterMethod === "all" ? invoice : invoice.status === filterMethod
   );
   return (
-    <div className={"container px-4 md:px-12 xl:px-64 hidden md:block"}>
+    <div className={`container px-4 md:px-12 xl:px-64 ${form ? "hidden md:block" : ""}`}>
       <ControlPanel len={invoices.length} />
       <div className="w-full">
         {invoices.map((invoice) => (

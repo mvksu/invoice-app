@@ -18,7 +18,7 @@ const AddForm: FC = () => {
       validationSchema={schema}
       enableReinitialize
     >
-      <div className="fixed pt-20 inset-x-0 top-0 grid bz-10  md:max-w-3xl md:pt-0  md:pl-24 h-screen max-h-screen md:rounded-r-xl z-50">
+      <div className="fixed pt-24 inset-x-0 top-0 grid bz-10  md:max-w-3xl md:pt-0  md:pl-24 h-screen max-h-screen md:rounded-r-xl z-10">
         <Form className="h-full p-4 flex flex-col overflow-y-scroll bg-dark-400">
           <Return />
           <h1 className="text-white text-3xl font-bold pb-6">New Invoice</h1>

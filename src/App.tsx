@@ -16,7 +16,7 @@ function App() {
             element={
               <>
                 <AddForm />
-                <Homepage />
+                <Homepage form={true}/>
               </>
             }
           />
