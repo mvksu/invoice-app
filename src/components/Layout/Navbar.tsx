@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import logo2 from "../images/logo2.svg";
-import avatar from "../images/avatar.jpg";
+import logo2 from "../../images/logo2.svg";
+import avatar from "../../images/avatar.jpg";
 import { FaMoon } from "react-icons/fa";
 
 const Navbar: FC = () => {

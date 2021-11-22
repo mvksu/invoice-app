@@ -17,7 +17,7 @@ const InvoiceCell: FC<invoiceType> = ({invoice}) => {
             {invoice.id}
           </h1>
           <h1 className="text-gray text-sm md:text-md col-span-3 md:col-start-2 md:col-span-2 w-1/6">
-            Due 25 December 2011
+            Due {invoice.createdAt.toLocaleDateString()}
           </h1>
           <h1 className="text-gray col-start-3 col-end-4 row-start-1 row-end-2 w-1/6">
             {invoice.clientInfo.name}

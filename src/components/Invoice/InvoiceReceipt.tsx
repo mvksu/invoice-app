@@ -18,7 +18,7 @@ const InvoiceReceipt: FC<any> = ({items}) => {
           <p className="text-gray">Total</p>
         </div>
         {items.map((item: any) => (
-          <div className="grid grid-cols-5 filter brightness-125 w-full text-right text-sm">
+          <div className="grid grid-cols-5 filter brightness-125 w-full text-right text-sm" key={item.id}>
             <p className="text-white col-start-1 col-end-3 text-left">
               {item.name}
             </p>

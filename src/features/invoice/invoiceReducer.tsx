@@ -1,3 +1,5 @@
+
+
 const initialState = [
   {
     id: 756473,
@@ -81,13 +83,13 @@ type actionType = {
   payload?: object;
 };
 
-function counterReducer(state = initialState, action: actionType) {
+function invoiceReducer(state = initialState, action: actionType) {
   switch (action.type) {
-    case "":
+    case "INVOICE_CREATE":
       return state;
     default:
       return state;
   }
 }
 
-export default counterReducer;
+export default invoiceReducer;

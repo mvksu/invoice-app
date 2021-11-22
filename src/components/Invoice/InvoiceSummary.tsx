@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import InvoiceReceipt from "./InvoiceReceipt";
 
 const InvoiceSummary: FC<any> = ({ invoice }) => {

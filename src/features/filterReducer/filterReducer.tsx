@@ -1,12 +1,14 @@
+import { filterTypes } from "../invoice/types"
+
 function filterReducer(state = "all", action: any) {
   switch (action.type) {
-    case "FILTER_ALL":
+    case filterTypes.FILTER_ALL:
       return "all";
-    case "FILTER_PAID":
+    case filterTypes.FILTER_PAID:
       return "paid";
-    case "FILTER_DRAFT":
+    case filterTypes.FILTER_DRAFT:
       return "draft";
-    case "FILTER_PENDING":
+    case filterTypes.FILTER_PENDING:
       return "pending";
     default:
       return state;
