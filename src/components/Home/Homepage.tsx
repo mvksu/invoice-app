@@ -23,8 +23,8 @@ const Homepage: FC<any> = ({form}) => {
       <div className={`${isOpen ? "hidden md:block" : "block"}`}>
         <ControlPanel len={invoices.length} />
         <div className="w-full">
-          {invoices.map((invoice) => (
-            <InvoiceCell invoice={invoice} key={invoice.id} />
+          {invoices.map((invoice, index) => (
+            <InvoiceCell invoice={invoice} index={index} key={invoice.id}/>
           ))}
         </div>
       </div>

@@ -11,24 +11,40 @@ import {
 import FormStructure from "./FormStructure";
 import { RootState } from "../../app/store";
 import { useParams } from "react-router";
-// import initialValues from "./initialValues";
+import { motion } from "framer-motion";
+
+const springTransition = {
+  duration: 0.8,
+  type: "spring",
+  bounce: 0.1,
+};
+
+export const slideLeft = {
+  hidden: {
+    x: "-100%",
+  },
+  show: {
+    x: 0,
+    transition: springTransition,
+  },
+  exit: {
+    x: "-100%",
+    transition: springTransition,
+  },
+};
 
 const AddForm: FC = () => {
-  const dispatch = useAppDispatch()
-  const { id } = useParams();
-  const invoiceValues = useAppSelector((state: RootState) =>
-    state.invoices.find((invoice) => invoice.id.toString() === id)
-  );
-  const isOpen = useAppSelector((state: RootState) => state.form.isOpen)
+  const dispatch = useAppDispatch();
+  const isOpen = useAppSelector((state: RootState) => state.form.isOpen);
   const isEdit = useAppSelector((state: RootState) => state.form.isEdit);
   const [showForm, setShowForm] = useState(false);
   const ref = useClickOutsideListenerRef(setShowForm);
   useEffect(() => {
-    isOpen ? setShowForm(true) : setShowForm(false)
-  }, [isOpen])
+    isOpen ? setShowForm(true) : setShowForm(false);
+  }, [isOpen]);
   useEffect(() => {
-    !showForm && isOpen && dispatch({ type: "CLOSE_FORM" })
-  }, [showForm])
+    !showForm && isOpen && dispatch({ type: "CLOSE_FORM" });
+  }, [showForm]);
 
   return showForm ? (
     <Formik
@@ -39,13 +55,16 @@ const AddForm: FC = () => {
       validationSchema={schema}
       enableReinitialize
     >
-      <div
+      <motion.div
         className="fixed pt-24 inset-x-0 top-0 grid h-screen md:max-w-3xl md:pt-0  md:pl-24 h-screen max-h-screen md:rounded-r-xl z-10"
         ref={ref}
+        initial="hidden"
+        animate="show"
+        variants={slideLeft}
       >
-        <FormStructure isEdit={isEdit}/>
+        <FormStructure isEdit={isEdit} />
         <FormButtons />
-      </div>
+      </motion.div>
     </Formik>
   ) : null;
 };

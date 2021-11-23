@@ -44,7 +44,7 @@ const InvoiceFilter = () => {
         )}
       </button>
       {showFilter && (
-        <div className="bg-dark-300 absolute right-0 mt-5 p-5 rounded-lg w-44 z-50">
+        <div className="bg-dark-300 dark:bg-white shadow-md absolute right-0 mt-5 p-5 rounded-lg w-44 z-50">
           <button
             className="w-full flex flex-row items-center group"
             onClick={() =>
@@ -55,16 +55,18 @@ const InvoiceFilter = () => {
               className={`flex justify-center items-center w-4 h-4 mr-4 ring-blue-500 group-hover:ring-1 transition-all duration-300 rounded-sm ${
                 filterValue === "all"
                   ? "bg-blue-500"
-                  : " bg-dark-400 dark:bg-dark-400"
+                  : " bg-dark-400 dark:bg-blue-100"
               }`}
             >
               {filterValue === "all" && (
-                <span className="text-sm font-bold text-white">
+                <span className="text-sm font-bold text-white dark:text-white">
                   {<FaCheck />}
                 </span>
               )}
             </span>
-            <span className="text-white capitalize font-bold ">All</span>
+            <span className="text-white capitalize font-bold dark:text-dark-900">
+              All
+            </span>
           </button>
           <button
             className="w-full flex flex-row items-center group"
@@ -78,7 +80,7 @@ const InvoiceFilter = () => {
               className={`flex justify-center items-center w-4 h-4 mr-4 ring-blue-500 group-hover:ring-1 transition-all duration-300 rounded-sm ${
                 filterValue === "paid"
                   ? "bg-blue-500"
-                  : " bg-dark-400 dark:bg-dark-400"
+                  : " bg-dark-400 dark:bg-blue-100"
               }`}
             >
               {filterValue === "paid" && (
@@ -87,7 +89,9 @@ const InvoiceFilter = () => {
                 </span>
               )}
             </span>
-            <span className="text-white capitalize font-bold ">Paid</span>
+            <span className="text-white capitalize font-bold dark:text-dark-900">
+              Paid
+            </span>
           </button>
           <button
             className="w-full flex flex-row items-center group"
@@ -101,7 +105,7 @@ const InvoiceFilter = () => {
               className={`flex justify-center items-center w-4 h-4 mr-4 ring-blue-500 group-hover:ring-1 transition-all duration-300 rounded-sm ${
                 filterValue === "draft"
                   ? "bg-blue-500"
-                  : " bg-dark-400 dark:bg-dark-400"
+                  : " bg-dark-400 dark:bg-blue-100"
               }`}
             >
               {filterValue === "draft" && (
@@ -110,7 +114,9 @@ const InvoiceFilter = () => {
                 </span>
               )}
             </span>
-            <span className="text-white capitalize font-bold">Draft</span>
+            <span className="text-white capitalize font-bold dark:text-dark-900">
+              Draft
+            </span>
           </button>
           <button
             className="w-full flex flex-row items-center group"
@@ -124,7 +130,7 @@ const InvoiceFilter = () => {
               className={`flex justify-center items-center w-4 h-4 mr-4 ring-blue-500 group-hover:ring-1 transition-all duration-300 rounded-sm ${
                 filterValue === "pending"
                   ? "bg-blue-500"
-                  : " bg-dark-400 dark:bg-dark-400"
+                  : " bg-dark-400 dark:bg-blue-100"
               }`}
             >
               {filterValue === "pending" && (
@@ -133,7 +139,9 @@ const InvoiceFilter = () => {
                 </span>
               )}
             </span>
-            <span className="text-white capitalize font-bold">Pending</span>
+            <span className="text-white capitalize font-bold dark:text-dark-900">
+              Pending
+            </span>
           </button>
         </div>
       )}

@@ -3,3 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply transition-all duration-300;
+  }
+  h2 {
+    @apply transition-all duration-300;
+  }
+}

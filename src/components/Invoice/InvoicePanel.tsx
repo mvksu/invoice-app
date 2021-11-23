@@ -12,13 +12,15 @@ const InvoicePanel: FC<any> = ({ invoice }) => {
   const navigate = useNavigate();
 
   const handleDelete = () => {
-    navigate('/')
-    dispatch({ type: "INVOICE_DEL", payload: id });
+    if (window.confirm("Are you sure you wish to delete this item?")) {
+      navigate("/");
+      dispatch({ type: "INVOICE_DEL", payload: id });
+    }
   };
 
   const handleEdit = () => {
-    dispatch({type: "OPEN_FORM_EDIT"})
-  }
+    dispatch({ type: "OPEN_FORM_EDIT" });
+  };
 
   return (
     <div>
