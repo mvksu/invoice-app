@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { FaAngleDown, FaAngleUp, FaCheck } from "react-icons/fa";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useClickOutsideListenerRef } from "../../app/hooks";
 
 const InvoiceFilter = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [filterValue, setFilterValue] = useState('all');
   const dispatch = useAppDispatch();
+  const ref = useClickOutsideListenerRef(setShowFilter);
+
   useEffect(() => {
     switch (filterValue) {
       case "all":
@@ -26,11 +28,12 @@ const InvoiceFilter = () => {
   }, [filterValue, dispatch])
 
   return (
-    <div className="relative">
-      <button
-        className="filter text-white flex items-center relative"
-        onClick={() => setShowFilter(!showFilter)}
-      >
+    <div
+      className="relative"
+      ref={ref}
+      onClick={() => setShowFilter(!showFilter)}
+    >
+      <button className="filter text-white dark:text-primary flex items-center relative">
         <h3 className="font-medium mr-2 text-md">
           Filter <span className="hidden md:inline">by status</span>
         </h3>
@@ -45,9 +48,7 @@ const InvoiceFilter = () => {
           <button
             className="w-full flex flex-row items-center group"
             onClick={() =>
-              filterValue === "all"
-                ? setFilterValue("")
-                : setFilterValue("all")
+              filterValue === "all" ? setFilterValue("") : setFilterValue("all")
             }
           >
             <span

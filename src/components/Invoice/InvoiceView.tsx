@@ -4,6 +4,8 @@ import { useAppSelector } from "../../app/hooks";
 import { RootState } from "../../app/store";
 import InvoicePanel from "./InvoicePanel";
 import InvoiceSummary from "./InvoiceSummary";
+import Form from "../Form/AddForm";
+
 
 const InvoiceView: FC = () => {
   const { id } = useParams()
@@ -12,6 +14,7 @@ const InvoiceView: FC = () => {
   );
   return (
     <div className="container px-4 md:px-12 xl:px-64 w-full flex flex-col-reverse">
+      <Form />
       <InvoiceSummary invoice={invoice} />
       <InvoicePanel invoice={invoice} />
     </div>

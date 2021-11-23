@@ -23,7 +23,7 @@ const InvoiceView: FC<InputProps> = ({ label, ...props }) => {
         ) : null}
       </div>
       <input
-        className={`bg-dark-300 w-full p-3 rounded-xl text-white text-sm font-bold focus:ring-2 ring-blue-300 outline-none hover:ring-2 ${
+        className={`bg-dark-300 dark:bg-white dark:border dark:text-dark-900 w-full p-3 rounded-xl text-white text-sm font-bold focus:ring-2 ring-blue-300 outline-none hover:ring-2 ${
           meta.touched && meta.error
             ? "ring-red-500 ring-2"
             : "ring-blue-300"

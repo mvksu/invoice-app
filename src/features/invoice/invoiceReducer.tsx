@@ -17,7 +17,7 @@ const initialState = [
       postCode: "99-000",
       city: "Warszawa",
     },
-    createdAt: new Date(),
+    createdAt: JSON.stringify(new Date()),
     paymentTerms: "next week",
     desc: "12345",
     status: "paid",
@@ -42,7 +42,7 @@ const initialState = [
       postCode: "99-000",
       city: "Warszawa",
     },
-    createdAt: new Date(),
+    createdAt: JSON.stringify(new Date()),
     paymentTerms: "next week",
     desc: "12345",
     status: "draft",
@@ -67,7 +67,7 @@ const initialState = [
       postCode: "99-000",
       city: "Warszawa",
     },
-    createdAt: new Date(),
+    createdAt: JSON.stringify(new Date()),
     paymentTerms: "next week",
     desc: "12345",
     status: "pending",
@@ -80,13 +80,16 @@ const initialState = [
 
 type actionType = {
   type: string;
-  payload?: object;
+  payload?: any;
 };
 
 function invoiceReducer(state = initialState, action: actionType) {
   switch (action.type) {
-    case "INVOICE_CREATE":
-      return state;
+    case "INVOICE_ADD":
+      console.log(action.payload)
+      return [...state];
+    case "INVOICE_DEL":
+      return state.filter((invoice) => invoice.id !== parseInt(action.payload.id));
     default:
       return state;
   }

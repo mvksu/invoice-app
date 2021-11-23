@@ -14,7 +14,7 @@ const InvoiceView: FC<InputSelectProps> = ({ label, name, options }) => {
       <label htmlFor={name} className="text-gray text-sm">
         {label}
       </label>
-      <select className="bg-dark-300 w-full p-3 rounded-xl text-white text-sm font-bold">
+      <select className="bg-dark-300 dark:bg-white w-full p-3 rounded-xl text-white dark:text-dark-900 text-sm font-bold">
         {options.map((option) => (
           <option value={option} key={option} label={option} />
         ))}

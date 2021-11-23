@@ -4,10 +4,10 @@ import InvoiceReceipt from "./InvoiceReceipt";
 const InvoiceSummary: FC<any> = ({ invoice }) => {
 
   return (
-    <div className="bg-dark-300 p-6 md:p-12 rounded-xl text-white mb-20 ">
+    <div className="bg-dark-300 dark:bg-white shadow-md p-6 md:p-12 rounded-xl text-white mb-20 ">
       <div className="block md:flex justify-between">
         <div className="title pb-6">
-          <h1 className="font-bold">
+          <h1 className="font-bold dark:text-dark-900">
             <span className="text-blue-300">#</span> {invoice.id}
           </h1>
           <h2 className="text-gray">{invoice.clientInfo.name}</h2>
@@ -24,22 +24,26 @@ const InvoiceSummary: FC<any> = ({ invoice }) => {
       <div className="flex justify-between pb-6">
         <div className="w-1/2">
           <h2 className="text-gray">Invoice Date</h2>
-          <h1 className="font-bold">{invoice.createdAt.toLocaleDateString()}</h1>
+          <h1 className="font-bold dark:text-dark-900">25/11/2012</h1>
         </div>
         <div className="w-1/2">
           <h2 className="text-gray">Bill To</h2>
-          <h1 className="font-bold">{invoice.clientInfo.country}</h1>
+          <h1 className="font-bold dark:text-dark-900">
+            {invoice.clientInfo.country}
+          </h1>
         </div>
       </div>
       <div className="flex justify-between pb-6">
         <div className="w-1/2">
           <h2 className="text-gray">Payment Due</h2>
-          <h1 className="font-bold">Tue 26 Oct</h1>
+          <h1 className="font-bold dark:text-dark-900">Tue 26 Oct</h1>
         </div>
       </div>
       <h2 className="text-gray">Sent to</h2>
-      <h1 className="font-bold pb-6">{invoice.clientInfo.email}</h1>
-      <InvoiceReceipt items={invoice.itemsList}/>
+      <h1 className="font-bold pb-6 dark:text-dark-900">
+        {invoice.clientInfo.email}
+      </h1>
+      <InvoiceReceipt items={invoice.itemsList} />
     </div>
   );
 };

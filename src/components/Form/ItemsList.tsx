@@ -42,7 +42,7 @@ const ItemsList: FC<any> = ({ values }) => {
                       </div>
                     </div>
                     <FaTimes
-                      className="text-white mt-6 mr-4 cursor-pointer hover:text-red-500"
+                      className="text-white dark:text-dark-900 mt-6 mr-4 cursor-pointer hover:text-red-500"
                       onClick={() => helpers.remove(index)}
                     />
                   </div>
@@ -68,7 +68,7 @@ const ItemsList: FC<any> = ({ values }) => {
               )}
 
               <button
-                className="rounded-full text-gray bg-dark-300 my-8 px-6 py-3 hover:bg-blue-300 hover:text-white w-full"
+                className="rounded-full text-gray bg-dark-300 dark:bg-blue-100 my-8 px-6 py-3 hover:bg-blue-300 hover:text-white w-full"
                 type="button"
                 onClick={() =>
                   helpers.push({ name: "", qty: "0", price: "0.00" })

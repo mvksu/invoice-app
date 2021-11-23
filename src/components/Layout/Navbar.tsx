@@ -6,7 +6,7 @@ import { FaMoon } from "react-icons/fa";
 
 const Navbar: FC = () => {
   return (
-    <nav className="bg-dark-300 h-24 w-full md:w-24 md:min-h-screen md:sticky md:top-0 rounded-none md:rounded-t-3xl flex md:flex-col justify-between z-50">
+    <nav className="bg-dark-300 dark:bg-dark-200 h-24 w-full md:w-24 md:min-h-screen md:sticky md:top-0 rounded-none md:rounded-t-3xl flex md:flex-col justify-between z-50">
       <Link
         to="/"
         className="bg-blue-500 w-24 h-24 rounded-r-3xl flex items-center justify-center relative group overflow-hidden"
@@ -19,7 +19,14 @@ const Navbar: FC = () => {
       <div className="flex flex-row md:flex-col">
         <div className="flex items-center justify-center w-24 h-24">
           <button className="text-white w-6 h-6 transform hover:scale-110">
-            <FaMoon className="w-full h-full" />
+            <FaMoon
+              className="w-full h-full"
+              onClick={() =>
+                document
+                  .getElementsByTagName("html")[0]
+                  .classList.toggle("dark")
+              }
+            />
           </button>
         </div>
         <div className="flex items-center justify-center h-24 w-24 border-l md:border-t md:border-l-0 border-blue-300 border-opacity-40">

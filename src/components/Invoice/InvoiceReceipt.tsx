@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const InvoiceReceipt: FC<any> = ({items}) => {
   return (
-    <div className="bg-dark-300 filter brightness-125 rounded-xl">
+    <div className="bg-dark-300  filter brightness-125 dark:brightness-150 rounded-xl">
       <div className="flex justify-between items-center py-4 px-6 md:hidden">
         <div>
           <h1>Item</h1>
@@ -18,7 +18,7 @@ const InvoiceReceipt: FC<any> = ({items}) => {
           <p className="text-gray">Total</p>
         </div>
         {items.map((item: any) => (
-          <div className="grid grid-cols-5 filter brightness-125 w-full text-right text-sm" key={item.id}>
+          <div className="grid grid-cols-5 filter brightness-125 w-full text-right text-sm" key={item.price -9}>
             <p className="text-white col-start-1 col-end-3 text-left">
               {item.name}
             </p>
@@ -28,7 +28,7 @@ const InvoiceReceipt: FC<any> = ({items}) => {
           </div>
         ))}
       </div>
-      <div className="bg-dark-900 w-full h-16 rounded-b-xl flex justify-between items-center ">
+      <div className="bg-dark-900 dark:bg-dark-200 w-full h-16 rounded-b-xl flex justify-between items-center ">
         <h1 className="px-4">Grand total</h1>
         <h1 className="text-2xl px-4">
           $
