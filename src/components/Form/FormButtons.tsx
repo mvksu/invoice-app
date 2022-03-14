@@ -10,7 +10,7 @@ const FormButtons: FC = () => {
   }
 
   return (
-    <div className="bg-dark-500 h-16 w-full flex border-t border-dark-300 justify-end px-8 pt-2">
+    <div className="bg-dark-500 h-36 md:h-24 w-full flex border-dark-300 justify-end px-8 pt-2 bg-dark-400 dark:bg-white">
       <button className="btn rounded-3xl bg-dark-200 dark:bg-blue-100 px-4 m-2 text-gray text-sm font-bold filter hover:brightness-125">
         Discard
       </button>

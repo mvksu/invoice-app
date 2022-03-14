@@ -11,7 +11,7 @@ interface InputProps {
 const InvoiceView: FC<InputProps> = ({ label, ...props }) => {
   const [field, meta] = useField(props)
   return (
-    <div className="py-1 w-full">
+    <div className="py-1 w-full mx-1">
       <div className="flex justify-between">
         <label htmlFor={field.name} className="text-gray text-sm">
           {label}

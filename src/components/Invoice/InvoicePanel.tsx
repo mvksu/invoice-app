@@ -25,10 +25,7 @@ const InvoicePanel: FC<any> = ({ invoice }) => {
   return (
     <div>
       <Link to="/" className="flex items-center my-6">
-        <FaAngleLeft className="text-blue-300 w-6 h-6" />
-        <p className="text-white text-sm dark:text-primary font-bold">
-          Go Back
-        </p>
+        <Return />
       </Link>
       <div className="flex items-center md:space-x-4 bg-dark-300 dark:bg-white shadow-md py-4 px-6 rounded-xl w-full justify-between mb-4">
         <p className="text-gray">Status</p>

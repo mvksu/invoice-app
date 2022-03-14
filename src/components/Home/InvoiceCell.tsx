@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FC } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -26,7 +26,8 @@ const InvoiceCell: FC<invoiceType> = ({ invoice, index }) => {
           opacity: 0,
           y: 15,
           transition: {
-            delay: index * 0.08,
+            duration: 0.5,
+            delay: index * 0.16,
             easings: ["easeOut"],
           },
         }}
