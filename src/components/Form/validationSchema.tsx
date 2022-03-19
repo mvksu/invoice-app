@@ -17,7 +17,7 @@ let schema = yup.object().shape({
     }),
     paymentTerms: yup.string().required('required'),
     desc: yup.string(),
-    // status: yup.string().required('required'),
+    status: yup.string(),
     itemsList: yup.array().of(yup.object({
         name: yup.string().required('required'),
         price: yup.number().positive("price must be positive"),

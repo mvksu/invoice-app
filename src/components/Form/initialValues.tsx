@@ -1,12 +1,12 @@
 const initialValues = {
   userInfo: {
-    street: "Dome",
-    city: "Brusy",
+    street: "",
+    city: "",
     country: "",
     postCode: "",
   },
   clientInfo: {
-    name: "Cleint",
+    name: "",
     email: "",
     street: "",
     country: "",
@@ -16,7 +16,7 @@ const initialValues = {
   createdAt: new Date(),
   paymentTerms: "next week",
   desc: "123desc",
-  status: "draft",
+  status: "pending",
   itemsList: [
     { name: "21", price: 5.0, qty: 1 },
     { name: "item", price: 5.0, qty: 2 },

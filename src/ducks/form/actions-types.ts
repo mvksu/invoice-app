@@ -1,0 +1,6 @@
+export enum ActionType {
+    OPEN_FORM = "OPEN_FORM",
+    CLOSE_FORM = "CLOSE_FORM",
+    CLOSE_FORM_EDIT = "CLOSE_FORM_EDIT",
+    OPEN_FORM_EDIT = "OPEN_FORM_EDIT",
+}

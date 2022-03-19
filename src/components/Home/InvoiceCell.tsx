@@ -1,15 +1,23 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { FC } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Flag from "../Reusables/Flag";
+import { Invoice } from "../../ducks/invoice/invoiceReducer"
 
-type invoiceType = {
-  invoice: any;
+type Props = {
+  invoice: Invoice;
   index: number;
 };
 
-const InvoiceCell: FC<invoiceType> = ({ invoice, index }) => {
+type Item = {
+  name: string, 
+  price: number,
+  qty: number,
+}
+
+const InvoiceCell: FC<Props> = ({ invoice, index }) => {
+
   return (
     <Link to={`invoice/${invoice.id}`}>
       <motion.div
@@ -26,8 +34,8 @@ const InvoiceCell: FC<invoiceType> = ({ invoice, index }) => {
           opacity: 0,
           y: 15,
           transition: {
-            duration: 0.5,
-            delay: index * 0.16,
+            duration: 0.4,
+            delay: index * 0.10,
             easings: ["easeOut"],
           },
         }}
@@ -42,12 +50,12 @@ const InvoiceCell: FC<invoiceType> = ({ invoice, index }) => {
             Due 25/11/2012
           </h1>
           <h1 className="text-gray col-start-3 col-end-4 row-start-1 row-end-2 w-1/6">
-            {invoice.clientInfo.name}
+            {invoice.clientInfo && invoice.clientInfo.name}
           </h1>
           <h1 className="text-white dark:text-primary font-bold text-md md:text-xl pt-1 md:p-0 w-1/6">
             $
-            {invoice.itemsList
-              .map((item: any) => item.price * item.qty)
+            {invoice.itemsList && invoice.itemsList
+              .map((item: Item) => item.price * item.qty)
               .reduce((sum: number, item: number) => sum + item, 0)}
             .00
           </h1>

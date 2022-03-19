@@ -3,7 +3,11 @@ import { FC } from "react";
 import InvoiceButton from "./InvoiceButton";
 import InvoiceFilter from "./InvoiceFilter";
 
-const ComtrolPanel: FC<any> = ({ len }) => {
+type Props = {
+  len: number
+}
+
+const ComtrolPanel: FC<Props> = ({ len }) => {
   return (
     <motion.div className="w-full flex justify-between items-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.25 }} exit={{ x: 100, opacity: 0 }}>
       <div className="flex flex-col">

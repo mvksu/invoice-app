@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { FaAngleLeft } from "react-icons/fa";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch } from "../../hooks/hooks";
 import { motion } from 'framer-motion';
 
 

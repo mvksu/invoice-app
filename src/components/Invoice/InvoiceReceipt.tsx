@@ -1,6 +1,16 @@
 import { FC } from "react";
 
-const InvoiceReceipt: FC<any> = ({items}) => {
+type Item = {
+  name: string, 
+  price: number,
+  qty: number,
+}
+
+type Props = {
+  items: Item[],
+}
+
+const InvoiceReceipt: FC<Props> = ({items}) => {
   return (
     <div className="bg-dark-300  filter brightness-125 dark:brightness-150 rounded-xl">
       <div className="flex justify-between items-center py-4 px-6 md:hidden">
@@ -17,7 +27,7 @@ const InvoiceReceipt: FC<any> = ({items}) => {
           <p className="text-gray">Price</p>
           <p className="text-gray">Total</p>
         </div>
-        {items.map((item: any) => (
+        {items.map((item: Item) => (
           <div className="grid grid-cols-5 filter brightness-125 w-full text-right text-sm" key={item.price -9}>
             <p className="text-white col-start-1 col-end-3 text-left">
               {item.name}
@@ -33,7 +43,7 @@ const InvoiceReceipt: FC<any> = ({items}) => {
         <h1 className="text-2xl px-4">
           $
           {items
-            .map((item: any) => item.price * item.qty)
+            .map((item: Item) => item.price * item.qty)
             .reduce((sum: number, item: number) => sum + item, 0)}
         </h1>
       </div>

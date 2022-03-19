@@ -1,0 +1,6 @@
+export enum ActionType {
+    FILTER_ALL = "FILTER_ALL",
+    FILTER_PAID = "FILTER_PAID",
+    FILTER_PENDING = "FILTER_PENDING",
+    FILTER_DRAFT = "FILTER_DRAFT",
+}

@@ -5,7 +5,17 @@ import { FaTimes } from "react-icons/fa";
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 
-const ItemsList: FC<any> = ({ values }) => {
+type Item = {
+  name: string, 
+  price: number,
+  qty: number,
+}
+
+type ItemsProps = {
+  values?: Item[]
+}
+
+const ItemsList: FC<ItemsProps> = ({ values }) => {
   return (
     <>
       <FieldArray name="itemsList">
@@ -14,7 +24,7 @@ const ItemsList: FC<any> = ({ values }) => {
             <div>
               <AnimatePresence>
                 {values.itemsList && values.itemsList.length > 0 ? (
-                  values.itemsList.map((item: any, index: number) => (
+                  values.itemsList.map((item: Item, index: number) => (
                     <motion.div
                       className="flex flex-row gap-3 flex-wrap items-center justify-between"
                       key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

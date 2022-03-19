@@ -1,12 +1,17 @@
 import { FC } from "react";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch } from "../../hooks/hooks";
 import Flag from "../Reusables/Flag";
 import Return from "../Reusables/Return";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { FaAngleLeft } from "react-icons/fa";
+import { deleteInvoice, payInvoice } from '../../ducks/invoice/action-creator';
+import { Invoice } from "../../ducks/invoice/invoiceReducer"
 
-const InvoicePanel: FC<any> = ({ invoice }) => {
+type Props = {
+  invoice: Invoice
+}
+
+const InvoicePanel: FC<Props> = ({ invoice }) => {
   const dispatch = useAppDispatch();
   const id = useParams();
   const navigate = useNavigate();
@@ -14,12 +19,16 @@ const InvoicePanel: FC<any> = ({ invoice }) => {
   const handleDelete = () => {
     if (window.confirm("Are you sure you wish to delete this item?")) {
       navigate("/");
-      dispatch({ type: "INVOICE_DEL", payload: id });
+      dispatch(deleteInvoice(invoice.id));
     }
   };
 
   const handleEdit = () => {
-    dispatch({ type: "OPEN_FORM_EDIT" });
+    dispatch({ type: "OPEN_FORM_EDIT", payload: null})
+  };
+
+  const handleMarkAsPaid = () => {
+    dispatch(payInvoice(invoice.id));
   };
 
   return (
@@ -34,7 +43,7 @@ const InvoicePanel: FC<any> = ({ invoice }) => {
           <div className="float-right">
             {invoice.status === ("draft" || "pending") ? (
               <button
-                className="rounded-3xl px-4 py-2 bg-dark-200 text-gray mx-2 text-white hover:ring-2 hover:text-white ring-blue-300 text-sm"
+                className="rounded-3xl px-4 py-2 bg-dark-200 text-gray mx-2 hover:ring-2 hover:text-white ring-blue-300 text-sm"
                 onClick={handleEdit}
               >
                 Edit
@@ -47,7 +56,7 @@ const InvoicePanel: FC<any> = ({ invoice }) => {
               Delete
             </button>
             {invoice.status === "pending" ? (
-              <button className="rounded-3xl px-4 py-2 bg-blue-300 mx-2 text-white filter hover:brightness-110 text-sm">
+              <button className="rounded-3xl px-4 py-2 bg-blue-300 mx-2 text-white filter hover:brightness-110 text-sm" onClick={handleMarkAsPaid}>
                 Mark as paid
               </button>
             ) : null}

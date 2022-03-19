@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaAngleDown, FaAngleUp, FaCheck } from "react-icons/fa";
-import { useAppDispatch, useClickOutsideListenerRef } from "../../app/hooks";
+import { useAppDispatch, useClickOutsideListenerRef } from "../../hooks/hooks";
 
 const InvoiceFilter = () => {
   const [showFilter, setShowFilter] = useState(false);
