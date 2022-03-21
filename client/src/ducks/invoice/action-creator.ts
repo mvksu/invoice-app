@@ -3,7 +3,7 @@ import { ActionType } from "./actions-types"
 
 export const getInvoices = () => {
     return createAction({
-        endpoint: "http://localhost:5000/invoices",
+        endpoint: "https://invoicemernapp.herokuapp.com/invoices",
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -26,7 +26,7 @@ export const getInvoices = () => {
 export const addInvoice = (invoice: any) => {
     console.log(invoice)
     return createAction({
-        endpoint: "http://localhost:5000/invoices",
+        endpoint: "https://invoicemernapp.herokuapp.com/invoices",
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export const addInvoice = (invoice: any) => {
 export const editInvoice = (invoice: any) => {
     console.log(invoice)
     return createAction({
-        endpoint: `http://localhost:5000/invoices/${invoice.id}`,
+        endpoint: `https://invoicemernapp.herokuapp.com/invoices/${invoice.id}`,
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -75,7 +75,7 @@ export const editInvoice = (invoice: any) => {
 
 export const deleteInvoice = (id: any) => {
     return createAction({
-        endpoint: `http://localhost:5000/invoices/${id}`,
+        endpoint: `https://invoicemernapp.herokuapp.com/nvoices/${id}`,
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export const deleteInvoice = (id: any) => {
 
 export const payInvoice = (id: any) => {
     return createAction({
-        endpoint: `http://localhost:5000/invoices/pay/${id}`,
+        endpoint: `https://invoicemernapp.herokuapp.com/invoices/pay/${id}`,
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

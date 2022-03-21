@@ -15,6 +15,7 @@ function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/invoice/:id" element={<InvoiceView />} />
             <Route path="/" element={<Homepage />} />
+            <Route path="*" element={<h1>123</h1>} />
           </Routes>
         </AnimatePresence>
       </Layout>
